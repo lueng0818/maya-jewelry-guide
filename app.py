@@ -146,67 +146,67 @@ totem_trumi = {
         "series": "Memory 系列 (記憶)",
         "item": "Memory系列-樹枝款耳環 / 戒指",
         "desc": "紅龍象徵古老的記憶。Memory系列的樹枝紋理，如同家族與生命的根系，將妳與大地母親的能量緊密連結。",
-        "url": "https://www.tru-mi.com/shop"
+        "url": "https://www.tru-mi.com/collections/memory"
     },
     "紅蛇": {
         "series": "Resilience 系列 (韌性)",
         "item": "Resilience系列-斜紋耳環 / 領帶系列",
         "desc": "紅蛇充滿生命力。Resilience系列的斜紋設計與俐落切角，象徵在都市叢林中靈活穿梭的韌性與魅力。",
-        "url": "https://www.tru-mi.com/shop"
+        "url": "https://www.tru-mi.com/collections/resilience"
     },
     "紅月": {
         "series": "Minilife 系列 (情緒流動)",
         "item": "Minilife系列-夢想的海洋 / 冬日的約定",
         "desc": "紅月是宇宙之水。Minilife系列中的海洋元素，以溫柔的波浪線條接住妳的情緒，療癒每一滴眼淚與歡笑。",
-        "url": "https://www.tru-mi.com/shop"
+        "url": "https://www.tru-mi.com/collections/minilife"
     },
     "紅天行者": {
         "series": "Morning Star 系列 (指引)",
         "item": "晨星系列-星願項鍊",
         "desc": "紅天行者穿梭時空。晨星系列的星芒如同夜空中的羅盤，為喜愛探索與冒險的妳，指引正確的方向。",
-        "url": "https://www.tru-mi.com/shop"
+        "url": "https://www.tru-mi.com/collections/morning-star"
     },
     "紅地球": {
         "series": "Memory 系列 (根植大地)",
         "item": "Memory系列-單花耳環 / 樹枝款",
         "desc": "紅地球與自然共時。Memory系列保留了植物有機的生長紋理，讓佩戴飾品的妳時刻保持接地 (Grounding) 的穩定頻率。",
-        "url": "https://www.tru-mi.com/shop"
+        "url": "https://www.tru-mi.com/collections/memory"
     },
     "白風": {
         "series": "Flawless 系列 (純粹溝通)",
         "item": "Flawless系列-孔珠套鍊 / 滾珠銀耳環",
         "desc": "白風傳遞靈性與溝通。Flawless系列極簡的孔珠設計，象徵話語的圓滿與通透，讓妳的溝通如風般自由流動。",
-        "url": "https://www.tru-mi.com/shop"
+        "url": "https://www.tru-mi.com/collections/flawless"
     },
     "白世界橋": {
         "series": "婚戒物語 (連結與承諾)",
         "item": "Tru-Mi 雙色拼接對戒 / 婚戒訂製",
         "desc": "白世界橋是連結兩個世界的通道。Tru-Mi 的婚戒與對戒系列，象徵跨越個體、連結彼此的神聖承諾。",
-        "url": "https://www.tru-mi.com/shop"
+        "url": "https://www.tru-mi.com/wedding"
     },
     "白狗": {
         "series": "Beloved 系列 (愛與陪伴)",
         "item": "Beloved系列-鈴鐺的祝福 / 寵物珠寶訂製",
         "desc": "白狗代表無條件的愛與忠誠。無論是寵物珠寶或Beloved系列的溫暖設計，都滋養著妳充滿愛的心輪。",
-        "url": "https://www.tru-mi.com/shop"
+        "url": "https://www.tru-mi.com/baby-gifts-beloved"
     },
     "白巫師": {
         "series": "Minilife 系列 (內在魔法)",
         "item": "Minilife系列-秘密花園 / 幸福的秘密",
         "desc": "白巫師安住在當下。Minilife系列中精緻微小的設計，彷彿施了魔法的護身符，提醒妳向內觀看，看見心中的秘密花園。",
-        "url": "https://www.tru-mi.com/shop"
+        "url": "https://www.tru-mi.com/collections/minilife"
     },
     "白鏡": {
         "series": "Flawless 系列 (映照真實)",
         "item": "Flawless系列-滾珠銀戒指 (亮面拋光)",
         "desc": "白鏡反映真相。Flawless系列經過精細拋光的銀飾，如鏡面般映照出真實的自己，展現無窮無盡的秩序之美。",
-        "url": "https://www.tru-mi.com/shop"
+        "url": "https://www.tru-mi.com/collections/flawless"
     },
     "藍夜": {
         "series": "Morning Star 系列 (夢想顯化)",
         "item": "晨星系列-星願項鍊 (鑲鑽/寶石款)",
         "desc": "藍夜是夢想家的搖籃。佩戴晨星系列，象徵將直覺與夢境顯化為現實，守護妳內在那個豐盛璀璨的星空。",
-        "url": "https://www.tru-mi.com/shop"
+        "url": "https://www.tru-mi.com/collections/morning-star"
     },
     "藍手": {
         "series": "專屬訂製 (創造與療癒)",
@@ -218,49 +218,49 @@ totem_trumi = {
         "series": "Beloved 系列 (遊戲與童心)",
         "item": "Beloved系列-搖搖馬手鍊 / 兔手鍊 / 皇冠",
         "desc": "藍猴看穿幻象，享受遊戲。Beloved系列充滿童心的設計（如搖搖馬、小兔子），能喚醒妳內在小孩的幽默與純真快樂。",
-        "url": "https://www.tru-mi.com/shop"
+        "url": "https://www.tru-mi.com/baby-gifts-beloved"
     },
     "藍鷹": {
         "series": "Resilience 系列 (視野與格局)",
         "item": "Resilience系列-領帶耳環 / 大領帶套鍊",
         "desc": "藍鷹擁有高遠的視野。Resilience系列的領帶造型象徵著專業、願景與力量，助妳在事業藍圖中展翅高飛。",
-        "url": "https://www.tru-mi.com/shop"
+        "url": "https://www.tru-mi.com/collections/resilience"
     },
     "藍風暴": {
         "series": "Minilife 系列 (能量蛻變)",
         "item": "Minilife系列-夢想的海洋 (波浪流動款)",
         "desc": "藍風暴帶來蛻變。海洋主題飾品中起伏的波浪線條，象徵著妳擁抱變動、轉化能量的強大本質，在風暴中心保持平靜。",
-        "url": "https://www.tru-mi.com/shop"
+        "url": "https://www.tru-mi.com/collections/minilife"
     },
     "黃種子": {
         "series": "Memory 系列 (潛能開花)",
         "item": "Memory系列-單花耳環 / 戒指",
         "desc": "黃種子蘊含開花的意圖。Memory系列中的花朵造型，象徵著耐心與成長，祝福妳心中那顆夢想的種子能順利破土而出。",
-        "url": "https://www.tru-mi.com/shop"
+        "url": "https://www.tru-mi.com/collections/memory"
     },
     "黃星星": {
         "series": "Morning Star & Flawless (藝術之美)",
         "item": "晨星系列 (星鑽) / Flawless 極致工藝",
         "desc": "黃星星追求優雅與藝術。晨星系列的閃耀光芒，或Flawless系列的極致工藝，呼應了妳天生要在人群中發光發熱的藝術家特質。",
-        "url": "https://www.tru-mi.com/shop"
+        "url": "https://www.tru-mi.com/collections/morning-star"
     },
     "黃人": {
         "series": "Mi 系列 (自由意志)",
         "item": "Mi系列-告白項鍊/手鍊 (刻字訂製)",
         "desc": "黃人強調智慧與自由意志。透過 Mi 系列將妳的人生格言、信念刻在飾品上，時刻提醒自己做出有意識的選擇。",
-        "url": "https://www.tru-mi.com/shop"
+        "url": "https://www.tru-mi.com/collections/mi"
     },
     "黃戰士": {
         "series": "Resilience 系列 (無畏勇氣)",
         "item": "Resilience系列-領帶戒指 / 幾何造型",
         "desc": "黃戰士無畏提問。Resilience系列如同妳的隱形鎧甲，幾何結構象徵才智與勇氣，陪伴妳面對挑戰，勇往直前。",
-        "url": "https://www.tru-mi.com/shop"
+        "url": "https://www.tru-mi.com/collections/resilience"
     },
     "黃太陽": {
         "series": "Morning Star 系列 (溫暖之光)",
         "item": "晨星系列 (金色款/K金)",
         "desc": "黃太陽是宇宙之火。選擇金色的晨星飾品，象徵妳無私溫暖的光芒，照亮自己也溫暖周圍的人，展現大氣的領袖風範。",
-        "url": "https://www.tru-mi.com/shop"
+        "url": "https://www.tru-mi.com/collections/morning-star"
     }
 }
 
