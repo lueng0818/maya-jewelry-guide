@@ -189,7 +189,7 @@ st.markdown(
 st.markdown(
     """
     <section class="hero">
-      <h1>💎 Maya Jewelry Guide</h1>
+      <h1>💎 Maya 輕珠寶能量顧問</h1>
       <p>輕珠寶能量指南｜為你的靈魂挑選專屬的護身符</p>
     </section>
     """,
