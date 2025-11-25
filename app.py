@@ -53,13 +53,13 @@ totem_trumi = {
         "series": "Flawless 系列 (純粹溝通)",
         "item": "Flawless系列-孔珠套鍊 / 滾珠銀耳環",
         "desc": "白風傳遞靈性與溝通。Flawless系列極簡的孔珠設計，象徵話語的圓滿與通透，讓妳的溝通如風般自由流動。",
-        "url": "https://www.tru-mi.com/shop"
+        "url": "https://www.tru-mi.com/collections/flawless"
     },
     "白世界橋": {
         "series": "婚戒物語 (連結與承諾)",
         "item": "Tru-Mi 雙色拼接對戒 / 婚戒訂製",
         "desc": "白世界橋是連結兩個世界的通道。Tru-Mi 的婚戒與對戒系列，象徵跨越個體、連結彼此的神聖承諾。",
-        "url": "https://www.tru-mi.com/shop"
+        "url": "https://www.tru-mi.com/wedding"
     },
     "白狗": {
         "series": "Beloved 系列 (愛與陪伴)",
