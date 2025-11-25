@@ -10,200 +10,341 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_DIR = os.path.join(BASE_DIR, "data")
 IMG_DIR  = os.path.join(BASE_DIR, "images")
 
-# ────────────── 1. Tru-Mi 能量選品資料庫 (五大面向口語版) ──────────────
-# 分類：💼事業 / 💰財富 / ❤️感情 / 🏠家庭 / 💪健康
+# ────────────── 1. General Jewelry Data (通用能量建議 - 人生面向版) ──────────────
+# gem: 寶石建議
+# design: 設計風格
+# metal: 金屬材質
+# vibe: 能量關鍵字
+# focus: 主攻面向 (事業/財富/感情/家庭/健康)
+# reason: 妳為什麼需要它 (口語化痛點解決)
 
-totem_trumi = {
+totem_general = {
     # 🔴 東方紅色家族
     "紅龍": {
-        "aspect": "🏠 家庭運 (Family)",
-        "tagline": "成為家人的靠山，也要記得照顧自己",
-        "desc": "妳總是把家人放在第一位，是家裡的支柱。這款【Memory 樹枝系列】就像家族的根，能幫妳穩住能量，讓妳在付出的同時，也能感受到被大地母親穩穩接住的安全感。",
-        "series": "Memory 系列",
-        "item": "Memory 樹枝款耳環 / 戒指",
-        "url": "https://www.tru-mi.com/collections/memory"
+        "gem": "紅寶石、石榴石",
+        "design": "復古圓形浮雕 (Cameo)",
+        "metal": "玫瑰金 (Rose Gold)",
+        "vibe": "滋養、重生",
+        "focus": "【家庭】、【健康】",
+        "reason": "紅龍是宇宙的母親。當妳覺得照顧家人好累、或是自己身體虛弱時，戴上它，就像接通了大地之母的臍帶，給妳源源不絕的滋養與體力。"
     },
     "紅蛇": {
-        "aspect": "💪 健康運 (Health)",
-        "tagline": "身體不會說謊，找回妳的生命力",
-        "desc": "最近是不是太累了？紅蛇提醒妳要聽身體的話。這款【Resilience 斜紋系列】象徵蛻變與重生，戴上它，提醒自己該休息就休息，找回那股生龍活虎的生命力！",
-        "series": "Resilience 系列",
-        "item": "Resilience 斜紋耳環",
-        "url": "https://www.tru-mi.com/collections/resilience"
+        "gem": "紅瑪瑙、紅碧玉",
+        "design": "蛇形戒指、貼身K金細鍊",
+        "metal": "玫瑰金 / 黃K金",
+        "vibe": "本能、活力",
+        "focus": "【健康】、【財富】",
+        "reason": "想要有錢，先要有體力！紅蛇戴上它能激活妳的下三輪，讓妳充滿幹勁去賺錢，同時讓妳的身體感官變得超敏銳，知道錢在哪裡。"
     },
     "紅月": {
-        "aspect": "❤️ 感情運 (Love)",
-        "tagline": "溫柔接住情緒，讓關係更流動",
-        "desc": "妳擁有細膩的感受力。這款【Minilife 海洋系列】的水滴造型，就像是在告訴妳：在感情裡，所有的眼淚和歡笑都是珍貴的。讓情緒像水一樣流動，妳的溫柔就是最強大的力量。",
-        "series": "Minilife 系列",
-        "item": "Minilife 夢想的海洋",
-        "url": "https://www.tru-mi.com/collections/minilife"
+        "gem": "月光石、珍珠",
+        "design": "水滴型切割、新月造型",
+        "metal": "玫瑰金 / 銀",
+        "vibe": "流動、療癒",
+        "focus": "【感情】、【健康】(女性調理)",
+        "reason": "這是專屬女人的護身符。當妳情緒起伏大、或是在感情中覺得受委屈時，珍珠與月光石能溫柔接住妳的眼淚，讓妳散發讓人想疼愛的溫柔光暈。"
     },
     "紅天行者": {
-        "aspect": "💼 事業運 (Career)",
-        "tagline": "別被框架綁住，去探索新機會",
-        "desc": "辦公室關不住妳的心！妳需要的是空間與冒險。戴上【Morning Star 晨星系列】，它就像夜空中的羅盤，指引妳在職場上大膽跨界，去嘗試那些妳一直想做的新計畫吧！",
-        "series": "Morning Star 系列",
-        "item": "晨星系列-星願項鍊",
-        "url": "https://www.tru-mi.com/collections/morning-star"
+        "gem": "紅紋石、紅碧璽",
+        "design": "羽毛造型、指南針設計",
+        "metal": "玫瑰金",
+        "vibe": "探索、自由",
+        "focus": "【事業】(業務拓展)",
+        "reason": "如果妳的工作需要跑來跑去、開發新客戶，或是想當斜槓青年。這款飾品能幫妳打破空間限制，讓妳走到哪、紅到哪，業績無國界。"
     },
     "紅地球": {
-        "aspect": "💰 財富運 (Wealth)",
-        "tagline": "跟隨直覺導航，資源自然會來",
-        "desc": "妳不需要用力追著錢跑，只要穩穩地紮根，資源就會被妳吸引過來。這款【Memory 單花系列】象徵大自然的豐盛，戴上它，提醒自己這一步走穩了，下一步的財富自然會發生。",
-        "series": "Memory 系列",
-        "item": "Memory 單花耳環 / 戒指",
-        "url": "https://www.tru-mi.com/collections/memory"
+        "gem": "煙水晶、琥珀",
+        "design": "原礦風格、樹枝狀紋理",
+        "metal": "復古金 / 銅",
+        "vibe": "穩健、共時",
+        "focus": "【財富】(被動收入)、【事業】(團隊)",
+        "reason": "不用費力追錢，讓錢來追妳。戴上它，能幫妳遇到對的合作夥伴（貴人），讓妳的事業穩穩扎根，財富像大樹一樣長大。"
     },
     # ⚪ 北方白色家族
     "白風": {
-        "aspect": "❤️ 感情運 (Love)",
-        "tagline": "說出真心話，讓溝通沒有距離",
-        "desc": "感情裡最怕猜來猜去。白風的妳，說話就是妳的魔力。這款【Flawless 孔珠系列】通透又圓滿，戴上它，讓妳更有勇氣表達真實的感受，讓對方真正聽懂妳的心。",
-        "series": "Flawless 系列",
-        "item": "Flawless 孔珠套鍊",
-        "url": "https://www.tru-mi.com/collections/flawless"
+        "gem": "白玉髓、蛋白石",
+        "design": "流蘇耳線、鏤空蕾絲",
+        "metal": "白金 / 925純銀",
+        "vibe": "溝通、靈性",
+        "focus": "【事業】(溝通表達)、【感情】",
+        "reason": "如果妳是老師、講師、直播主，戴上它守護喉輪！它能讓妳說出來的話更有感染力。在感情中，它能幫妳把心裡話好好說出來，減少誤會。"
     },
     "白世界橋": {
-        "aspect": "💼 事業運 (Career)",
-        "tagline": "你是最強的橋樑，連結跨界資源",
-        "desc": "妳天生適合牽線、整合資源。這款【Tru-Mi 雙色對戒/拼接系列】象徵著「連結」，提醒妳在職場上發揮妳的強項，把不同的人事物串聯起來，機會就在那些連結裡！",
-        "series": "婚戒/對戒系列",
-        "item": "Tru-Mi 雙色拼接款式",
-        "url": "https://www.tru-mi.com/wedding"
+        "gem": "拉長石、銀曜石",
+        "design": "極簡金屬鍊條、雙指戒",
+        "metal": "白金 / 銀",
+        "vibe": "連結、釋放",
+        "focus": "【事業】(跨界人脈)、【健康】(釋放壓力)",
+        "reason": "想談成大生意？需要牽線？白世界橋是最好的「橋樑」。它能幫妳連結不同領域的人脈。同時，它也幫助妳「放下」過期的壓力，斷捨離舊的人事物。"
     },
     "白狗": {
-        "aspect": "❤️ 感情運 (Love)",
-        "tagline": "先愛自己，才能遇見對的人",
-        "desc": "妳總是對人很好，但別忘了對自己好。這款【Beloved 鈴鐺/寵物系列】充滿了愛的能量，戴上它，先好好寵愛自己，妳會發現，當妳發光時，身邊的人會更愛妳。",
-        "series": "Beloved 系列",
-        "item": "Beloved 鈴鐺的祝福",
-        "url": "https://www.tru-mi.com/baby-gifts-beloved"
+        "gem": "粉晶、摩根石",
+        "design": "心型設計、繩結設計",
+        "metal": "玫瑰金 / 白金",
+        "vibe": "真愛、忠誠",
+        "focus": "【感情】、【家庭】(最強的愛)",
+        "reason": "這是馬雅曆法裡的「愛神」。不管是想脫單、想跟老公重燃愛火，還是修復家人關係。戴上它，就是告訴宇宙：「我準備好接收愛，也給出愛了。」"
     },
     "白巫師": {
-        "aspect": "💰 財富運 (Wealth)",
-        "tagline": "相信直覺，顯化妳想要的豐盛",
-        "desc": "別擔心未來，妳的意念就是魔法。這款【Minilife 秘密花園】藏著微小的驚喜，就像妳內在的魔法力量。只要妳閉上眼相信，妳需要的錢與資源，都會在對的時間來到妳身邊。",
-        "series": "Minilife 系列",
-        "item": "Minilife 秘密花園",
-        "url": "https://www.tru-mi.com/collections/minilife"
+        "gem": "紫水晶、紫鋰輝",
+        "design": "貓眼石、神祕符號墜飾",
+        "metal": "白金 / 銀",
+        "vibe": "魔法、平靜",
+        "focus": "【財富】(顯化法則)、【健康】(心靈平靜)",
+        "reason": "妳容易焦慮嗎？白巫師教妳「無為而治」。戴上紫水晶，讓腦袋安靜下來，妳會發現當妳不焦慮時，想要的好運反而自己送上門了（這就是魔法）。"
     },
     "白鏡": {
-        "aspect": "💼 事業運 (Career)",
-        "tagline": "看清真相，做出最精準的決策",
-        "desc": "職場上紛紛擾擾，但妳心裡跟明鏡一樣清楚。這款【Flawless 滾珠銀戒】經過精細拋光，就像一面鏡子。戴上它，幫妳擋掉虛假的人事物，讓妳在做決策時快、狠、準。",
-        "series": "Flawless 系列",
-        "item": "Flawless 滾珠銀戒 (亮面)",
-        "url": "https://www.tru-mi.com/collections/flawless"
+        "gem": "白水晶、白拓帕石",
+        "design": "鏡面寬版銀戒、祖母綠切割",
+        "metal": "白金 / 銀",
+        "vibe": "真相、秩序",
+        "focus": "【事業】(判斷力)、【感情】(看清真相)",
+        "reason": "職場上小人很多？感情中怕被騙？白鏡像一把利劍，幫妳斬斷虛假的謊言，讓妳看清楚誰才是真正值得投入的人，做出最理性的判斷。"
     },
     # 🔵 西方藍色家族
     "藍夜": {
-        "aspect": "💰 財富運 (Wealth)",
-        "tagline": "妳的夢想很值錢，把直覺變現金",
-        "desc": "妳是天生的夢想家，而且妳有能力把夢想變成錢！這款【Morning Star 星願項鍊】守護著妳內心的豐盛藍圖。別害怕做大夢，戴上這顆星星，它會指引妳找到通往財富的路。",
-        "series": "Morning Star 系列",
-        "item": "晨星系列-星願項鍊",
-        "url": "https://www.tru-mi.com/collections/morning-star"
+        "gem": "青金石、藍砂石",
+        "design": "星月造型、星空感設計",
+        "metal": "K白金 / 黃K金",
+        "vibe": "直覺、豐盛",
+        "focus": "【財富】(直覺致富)",
+        "reason": "這是馬雅曆法裡的「大財庫」！藍夜掌管豐盛與夢想。戴上像星空一樣的寶石，能增強妳的理財直覺，適合做投資、創業的人，讓妳敢做發財夢，也能實現它。"
     },
     "藍手": {
-        "aspect": "💼 事業運 (Career)",
-        "tagline": "別想了做就對了，實作帶來好運",
-        "desc": "想太多會讓妳卡住，動手做才會帶來好運！推薦妳【專屬訂製 / 手作體驗】，親手參與設計或製作。看著成品在妳手中完成，那種成就感會是妳事業衝刺的最大動能。",
-        "series": "專屬訂製",
-        "item": "Tru-Mi 故事訂製 / 手作體驗",
-        "url": "https://www.tru-mi.com/custom-jewelry"
+        "gem": "綠松石、海藍寶",
+        "design": "手掌造型 (Hamsa Hand)、疊戴戒指",
+        "metal": "K白金 / 銀",
+        "vibe": "執行、療癒",
+        "focus": "【事業】(執行力)、【健康】(療癒)",
+        "reason": "想得多、做得少？事情永遠做不完？藍手飾品戴在手上，就是提醒妳「現在就做」。同時它有強大的療癒力，適合醫護人員、療癒師佩戴。"
     },
     "藍猴": {
-        "aspect": "💪 健康運 (Health)",
-        "tagline": "生活太緊繃了嗎？記得玩樂與大笑",
-        "desc": "妳最近是不是太嚴肅了？壓力會讓身體生病的。這款【Beloved 搖搖馬/兔手鍊】充滿童心，戴上它，提醒自己像孩子一樣大笑、玩樂。心情鬆了，身體自然就健康了！",
-        "series": "Beloved 系列",
-        "item": "Beloved 搖搖馬/兔手鍊",
-        "url": "https://www.tru-mi.com/baby-gifts-beloved"
+        "gem": "磷灰石、多彩剛玉",
+        "design": "不對稱童趣耳環、拼圖造型",
+        "metal": "K白金",
+        "vibe": "玩樂、幽默",
+        "focus": "【家庭】(親子關係)、【健康】(快樂)",
+        "reason": "覺得人生太苦、壓力太大？藍猴幫妳找回「玩心」。戴上繽紛的飾品，讓妳面對育兒崩潰時能一笑置之，用幽默感化解家庭氣氛，快樂是最好的藥。"
     },
     "藍鷹": {
-        "aspect": "💼 事業運 (Career)",
-        "tagline": "飛高一點看，妳的格局決定結局",
-        "desc": "別被眼前的小事絆住，妳是屬於大場面的。這款【Resilience 領帶系列】象徵著專業與視野，戴上它，提醒自己用老鷹的高度看事情，妳會發現原本的難題根本不算什麼。",
-        "series": "Resilience 系列",
-        "item": "Resilience 領帶耳環/項鍊",
-        "url": "https://www.tru-mi.com/collections/resilience"
+        "gem": "藍寶石、坦桑石",
+        "design": "翅膀/眼睛意象、V型項鍊",
+        "metal": "K白金",
+        "vibe": "視野、格局",
+        "focus": "【事業】(升遷、願景)",
+        "reason": "覺得工作卡關、看不到未來？藍鷹給妳「老鷹般的視野」。它適合老闆、主管，幫妳看清市場局勢，飛得比別人高，看得比別人遠。"
     },
     "藍風暴": {
-        "aspect": "💼 事業運 (Career)",
-        "tagline": "擁抱變動，妳是混亂中的破局者",
-        "desc": "環境在變，那是因為妳要起飛了！別怕混亂，這款【Minilife 海洋波浪款】象徵著強大的轉化能量。戴上它，把所有的挑戰都變成妳事業升級的跳板。",
-        "series": "Minilife 系列",
-        "item": "Minilife 夢想的海洋 (波浪)",
-        "url": "https://www.tru-mi.com/collections/minilife"
+        "gem": "紫龍晶、黑曜石",
+        "design": "閃電造型、不規則金屬",
+        "metal": "K白金 / 黑金",
+        "vibe": "改革、翻轉",
+        "focus": "【事業】(轉職、改革)、【財富】(翻轉)",
+        "reason": "想跳槽？想把舊體制打掉重練？藍風暴是強大的催化劑。戴上它，讓妳有勇氣面對混亂，在變動中找到翻身的機會，把危機變轉機。"
     },
     # 🟡 南方黃色家族
     "黃種子": {
-        "aspect": "💰 財富運 (Wealth)",
-        "tagline": "耐心播種，時間會給妳最豐厚的回報",
-        "desc": "財富是急不來的，妳現在做的每一分努力都在累積。這款【Memory 花朵系列】象徵開花結果。戴上它，提醒自己保持耐心，妳種下的錢脈種子，終究會長成大樹。",
-        "series": "Memory 系列",
-        "item": "Memory 單花耳環",
-        "url": "https://www.tru-mi.com/collections/memory"
+        "gem": "橄欖石、綠碧璽",
+        "design": "蛋面切割、花苞造型",
+        "metal": "18K黃金",
+        "vibe": "潛力、收穫",
+        "focus": "【財富】(長期投資)、【事業】(潛力)",
+        "reason": "如果妳正在創業初期，或是在存第一桶金。黃種子給妳「耐心」。戴上它，守護妳心中的目標，讓它在最對的時機發芽、開花、結果。"
     },
     "黃星星": {
-        "aspect": "❤️ 感情運 (Love)",
-        "tagline": "活得漂亮優雅，讓自己成為發光體",
-        "desc": "妳天生就該閃閃發光！不要因為忙碌而變得黯淡。這款【Morning Star 星鑽系列】能襯托妳的氣質。當妳把自己打扮得漂亮優雅時，愛情與好人緣自然會被妳吸引過來。",
-        "series": "Morning Star 系列",
-        "item": "晨星系列 (星鑽款)",
-        "url": "https://www.tru-mi.com/collections/morning-star"
+        "gem": "黃鑽、鋯石",
+        "design": "星型設計、八芒星",
+        "metal": "18K黃金",
+        "vibe": "魅力、藝術",
+        "focus": "【事業】(個人品牌)、【感情】(魅力)",
+        "reason": "這是一個「看臉」的時代。黃星星幫妳把「美」變成競爭力。適合需要站上舞台、經營IG的人，讓妳優雅地發光，吸引所有人的目光。"
     },
     "黃人": {
-        "aspect": "💼 事業運 (Career)",
-        "tagline": "相信妳的智慧，拿回人生的選擇權",
-        "desc": "妳很聰明，別讓別人左右妳的決定。這款【Mi 刻字系列】可以刻上妳的信念或格言。戴上它，時刻提醒自己：我有能力做出最正確的選擇，我的未來我說了算。",
-        "series": "Mi 系列",
-        "item": "Mi 告白項鍊 (刻字訂製)",
-        "url": "https://www.tru-mi.com/collections/mi"
+        "gem": "黃水晶、托帕石",
+        "design": "經典單鑽、智慧之杯",
+        "metal": "18K黃金",
+        "vibe": "智慧、自主",
+        "focus": "【事業】(決策)、【健康】(自主權)",
+        "reason": "這是有智慧的象徵。當妳面臨人生重大十字路口，不知道該選哪條路時，戴上黃水晶，它能清明妳的思緒，讓妳做出不後悔的決定。"
     },
     "黃戰士": {
-        "aspect": "💼 事業運 (Career)",
-        "tagline": "無所畏懼，妳是解決問題的高手",
-        "desc": "遇到困難別退縮，那是宇宙給妳的隨堂考。這款【Resilience 幾何造型】就像妳的隱形盾牌與鎧甲。戴上它，給妳滿滿的勇氣，職場上沒有妳解決不了的難題！",
-        "series": "Resilience 系列",
-        "item": "Resilience 幾何造型戒",
-        "url": "https://www.tru-mi.com/collections/resilience"
+        "gem": "黃鐵礦、鈦晶",
+        "design": "盾牌/鉚釘設計、幾何造型",
+        "metal": "18K黃金 / 黑金",
+        "vibe": "勇氣、突破",
+        "focus": "【事業】(突破困難)、【財富】(膽識)",
+        "reason": "怕輸？怕被拒絕？黃戰士是妳的勇氣盾牌。業務員必備！戴上它，讓妳敢於提問、敢於爭取，哪怕前面有困難，妳也能帥氣地跨過去。"
     },
     "黃太陽": {
-        "aspect": "💰 財富運 (Wealth)",
-        "tagline": "妳就是光，分享越多財富越多",
-        "desc": "妳有一種溫暖的領袖氣質，不需要競爭，只需照耀他人。這款【金色系晨星/K金飾品】象徵太陽的能量。戴上它，大方展現妳的熱情，妳給予出去的，都會以金錢的形式加倍流回來。",
-        "series": "Morning Star / 婚戒系列",
-        "item": "晨星系列 (金色款) / K金戒指",
-        "url": "https://www.tru-mi.com/collections/morning-star"
+        "gem": "太陽石、琥珀",
+        "design": "太陽光芒設計、18K厚金",
+        "metal": "18K黃金",
+        "vibe": "好運、活力",
+        "focus": "【全方位】(好運)、【健康】(活力)",
+        "reason": "這就是一顆小太陽掛在身上！如果你最近覺得運氣陰陰的、身體冷冷的，戴上它驅散陰霾。讓妳成為一個溫暖的人，好事自然會被妳吸引過來。"
     }
 }
 
-# ────────────── 2. Tone Advice (13調性-口語版建議) ──────────────
+# ────────────── 2. Tru-Mi Product Mapping (品牌產品對應 - 男女分流) ──────────────
+totem_trumi = {
+    "紅龍": {
+        "F": {"series": "Memory 系列", "item": "Memory 樹枝款耳環/戒指", "desc": "樹枝紋理象徵家族根系，連結大地母親能量。", "url": "https://www.tru-mi.com/collections/memory"},
+        "M": {"series": "Memory 系列 (中性款)", "item": "Memory 樹枝紋寬版戒", "desc": "寬版樹枝紋理，象徵家族榮耀與穩固根基。", "url": "https://www.tru-mi.com/collections/memory"}
+    },
+    "紅蛇": {
+        "F": {"series": "Resilience 系列", "item": "Resilience 斜紋/領帶系列", "desc": "斜紋設計象徵在都市叢林中靈活穿梭的韌性。", "url": "https://www.tru-mi.com/collections/resilience"},
+        "M": {"series": "Resilience 系列", "item": "Resilience 幾何領帶夾/戒指", "desc": "幾何切面象徵蛻變，職場上的力量護身符。", "url": "https://www.tru-mi.com/collections/resilience"}
+    },
+    "紅月": {
+        "F": {"series": "Minilife 系列", "item": "Minilife 夢想的海洋", "desc": "海洋溫柔波浪，接住情緒，療癒眼淚與歡笑。", "url": "https://www.tru-mi.com/collections/minilife"},
+        "M": {"series": "Flawless 系列", "item": "Flawless 滾珠銀戒", "desc": "簡約銀飾如月光照耀海面，穩定內在情緒潮汐。", "url": "https://www.tru-mi.com/collections/flawless"}
+    },
+    "紅天行者": {
+        "F": {"series": "Morning Star 系列", "item": "晨星系列-星願項鍊", "desc": "星芒如夜空羅盤，為喜愛冒險的妳指引方向。", "url": "https://www.tru-mi.com/collections/morning-star"},
+        "M": {"series": "專屬訂製", "item": "客製化經緯度/羅盤飾品", "desc": "訂製刻有特殊地點經緯度飾品，紀念空間探索。", "url": "https://www.tru-mi.com/custom-jewelry"}
+    },
+    "紅地球": {
+        "F": {"series": "Memory 系列", "item": "Memory 單花/樹枝款", "desc": "植物有機生長紋理，保持與自然接地的穩定頻率。", "url": "https://www.tru-mi.com/collections/memory"},
+        "M": {"series": "Memory 系列", "item": "Memory 樹枝紋理戒 (霧面)", "desc": "粗獷樹枝紋理搭配霧面處理，展現大地般厚實質感。", "url": "https://www.tru-mi.com/collections/memory"}
+    },
+    "白風": {
+        "F": {"series": "Flawless 系列", "item": "Flawless 孔珠套鍊", "desc": "極簡孔珠設計，象徵話語圓滿通透，溝通如風般自由。", "url": "https://www.tru-mi.com/collections/flawless"},
+        "M": {"series": "Flawless 系列", "item": "Flawless 極簡銀戒", "desc": "乾淨無多餘裝飾銀戒，象徵言語的真實與純粹。", "url": "https://www.tru-mi.com/collections/flawless"}
+    },
+    "白世界橋": {
+        "F": {"series": "婚戒/對戒系列", "item": "Tru-Mi 雙色拼接對戒", "desc": "象徵跨越個體、連結彼此的神聖承諾。", "url": "https://www.tru-mi.com/wedding"},
+        "M": {"series": "婚戒/對戒系列", "item": "Tru-Mi 幾何切面對戒", "desc": "結構性強的對戒設計，代表建立連結所需的穩定。", "url": "https://www.tru-mi.com/wedding"}
+    },
+    "白狗": {
+        "F": {"series": "Beloved 系列", "item": "Beloved 鈴鐺/寵物訂製", "desc": "無論寵物珠寶或溫暖設計，滋養充滿愛與忠誠的心輪。", "url": "https://www.tru-mi.com/baby-gifts-beloved"},
+        "M": {"series": "Mi 系列", "item": "Mi 刻字手鍊 (皮革/銀)", "desc": "刻上重要夥伴名字，象徵對守護對象的承諾。", "url": "https://www.tru-mi.com/collections/mi"}
+    },
+    "白巫師": {
+        "F": {"series": "Minilife 系列", "item": "Minilife 秘密花園", "desc": "精緻微小設計如魔法護身符，提醒妳向內觀看。", "url": "https://www.tru-mi.com/collections/minilife"},
+        "M": {"series": "Memory 系列", "item": "Memory 沉穩款戒指", "desc": "設計內斂帶有手作溫度，安住當下，展現意志力量。", "url": "https://www.tru-mi.com/collections/memory"}
+    },
+    "白鏡": {
+        "F": {"series": "Flawless 系列", "item": "Flawless 滾珠銀戒 (亮面)", "desc": "精細拋光銀飾如鏡面映照真實自己，展現秩序之美。", "url": "https://www.tru-mi.com/collections/flawless"},
+        "M": {"series": "Flawless 系列", "item": "Flawless 平面銀戒 (亮面)", "desc": "如刀鋒般俐落亮面銀戒，象徵洞察真相的決斷力。", "url": "https://www.tru-mi.com/collections/flawless"}
+    },
+    "藍夜": {
+        "F": {"series": "Morning Star 系列", "item": "晨星系列-星願項鍊", "desc": "將直覺與夢境顯化為現實，守護內在豐盛璀璨星空。", "url": "https://www.tru-mi.com/collections/morning-star"},
+        "M": {"series": "Resilience 系列", "item": "Resilience 幾何造型", "desc": "以幾何結構捕捉夢想形狀，將潛意識豐盛顯化為物質。", "url": "https://www.tru-mi.com/collections/resilience"}
+    },
+    "藍手": {
+        "F": {"series": "專屬訂製", "item": "Tru-Mi 手作體驗課程", "desc": "推薦參與「手作體驗」，親手打造療癒與創造的證明。", "url": "https://www.tru-mi.com/custom-jewelry"},
+        "M": {"series": "專屬訂製", "item": "全訂製工藝服務", "desc": "透過訂製服務，將你的想法透過工藝轉化為現實。", "url": "https://www.tru-mi.com/custom-jewelry"}
+    },
+    "藍猴": {
+        "F": {"series": "Beloved 系列", "item": "Beloved 搖搖馬/兔手鍊", "desc": "充滿童心設計，喚醒內在小孩的幽默與純真快樂。", "url": "https://www.tru-mi.com/baby-gifts-beloved"},
+        "M": {"series": "Mi 系列", "item": "Mi 趣味刻字/圖騰訂製", "desc": "訂製帶有幽默語句或特殊圖騰飾品，展現玩心。", "url": "https://www.tru-mi.com/collections/mi"}
+    },
+    "藍鷹": {
+        "F": {"series": "Resilience 系列", "item": "Resilience 領帶耳環/項鍊", "desc": "領帶造型象徵專業與願景，助妳在事業藍圖展翅高飛。", "url": "https://www.tru-mi.com/collections/resilience"},
+        "M": {"series": "Resilience 系列", "item": "Resilience 領帶夾/袖扣", "desc": "專為男士設計領帶造型飾品，展現遠見與領袖氣場。", "url": "https://www.tru-mi.com/collections/resilience"}
+    },
+    "藍風暴": {
+        "F": {"series": "Minilife 系列", "item": "Minilife 夢想的海洋 (波浪)", "desc": "起伏波浪線條，象徵擁抱變動、轉化能量的本質。", "url": "https://www.tru-mi.com/collections/minilife"},
+        "M": {"series": "Memory 系列", "item": "Memory 敲擊紋理戒", "desc": "充滿鍛敲痕跡戒指，象徵經歷風暴洗禮後的堅韌。", "url": "https://www.tru-mi.com/collections/memory"}
+    },
+    "黃種子": {
+        "F": {"series": "Memory 系列", "item": "Memory 單花耳環", "desc": "花朵造型象徵耐心與成長，祝福夢想種子順利破土。", "url": "https://www.tru-mi.com/collections/memory"},
+        "M": {"series": "Memory 系列", "item": "Memory 簡約圈戒", "desc": "簡單圈戒蘊含無限生機，象徵專注目標的持續成長。", "url": "https://www.tru-mi.com/collections/memory"}
+    },
+    "黃星星": {
+        "F": {"series": "Morning Star 系列", "item": "晨星系列 (星鑽款)", "desc": "閃耀光芒呼應妳天生要在人群發光發熱的特質。", "url": "https://www.tru-mi.com/collections/morning-star"},
+        "M": {"series": "Morning Star 系列", "item": "晨星系列 (無鑽K金)", "desc": "線條優雅K金飾品，展現不凡品味與藝術眼光。", "url": "https://www.tru-mi.com/collections/morning-star"}
+    },
+    "黃人": {
+        "F": {"series": "Mi 系列", "item": "Mi 告白項鍊 (刻字)", "desc": "將人生格言刻在飾品上，時刻提醒自己有意識選擇。", "url": "https://www.tru-mi.com/collections/mi"},
+        "M": {"series": "Mi 系列", "item": "Mi 刻字寬版手環", "desc": "將信念刻在寬版手環，象徵自由意志與智慧展現。", "url": "https://www.tru-mi.com/collections/mi"}
+    },
+    "黃戰士": {
+        "F": {"series": "Resilience 系列", "item": "Resilience 幾何造型戒", "desc": "幾何結構如隱形鎧甲，象徵才智勇氣，陪伴面對挑戰。", "url": "https://www.tru-mi.com/collections/resilience"},
+        "M": {"series": "Resilience 系列", "item": "Resilience 盾牌意象飾品", "desc": "結構感強烈如戰士盾牌，賦予無畏前行的勇氣。", "url": "https://www.tru-mi.com/collections/resilience"}
+    },
+    "黃太陽": {
+        "F": {"series": "Morning Star 系列", "item": "晨星系列 (金色款)", "desc": "金色飾品象徵無私溫暖光芒，展現大氣領袖風範。", "url": "https://www.tru-mi.com/collections/morning-star"},
+        "M": {"series": "婚戒/對戒系列", "item": "厚實K金戒指", "desc": "厚實有份量K金戒指，象徵太陽般恆久不變的能量。", "url": "https://www.tru-mi.com/wedding"}
+    }
+}
+
+# ────────────── 3. Tone Advice (13調性-結構建議 - 男女分流) ──────────────
 tone_advice = {
-    1:  {"name": "磁性", "tip": "【專注自己】今天別管別人怎麼想，問問自己「我最想要什麼？」戴上一條最能代表妳的項鍊，做回主角。"},
-    2:  {"name": "月亮", "tip": "【平衡選擇】遇到左右為難的事嗎？別急著選邊站。戴上對稱的耳環或對戒，提醒自己：兩個選擇都有好處，保持彈性就好。"},
-    3:  {"name": "電力", "tip": "【連結朋友】今天適合約人出來聊聊！戴上會晃動的垂墜耳環，讓自己動起來，好運是透過「人與人的連結」帶來的喔！"},
-    4:  {"name": "自我存在", "tip": "【建立SOP】事情太雜亂？列張清單，一步一步來。戴上方形或有框線的飾品，幫妳建立秩序，心定下來，效率就來了。"},
-    5:  {"name": "超頻", "tip": "【展現霸氣】今天由妳說了算！不要縮在角落。戴上妳最大、最亮眼的那顆戒指，站上舞台，大家都在等妳發號施令。"},
-    6:  {"name": "韻律", "tip": "【找回節奏】忙得像陀螺嗎？深呼吸，慢下來。選擇佩戴感最舒服、圓潤的飾品，幫妳找回生活與工作的平衡點。"},
-    7:  {"name": "共振", "tip": "【跟隨直覺】今天腦袋放空一點，跟著感覺走。閉上眼摸摸身上的飾品，它會變成妳的天線，幫妳接收宇宙的靈感。"},
-    8:  {"name": "銀河", "tip": "【言行一致】檢視一下，妳做的事是妳真心喜歡的嗎？嘗試成套搭配飾品，讓內在的想法和外在的行動「整合」在一起。"},
-    9:  {"name": "太陽", "tip": "【衝刺行動】別猶豫了，做就對了！今天能量很強，戴上閃亮的飾品，把想做的事情一口氣推進，成果會超乎預期。"},
-    10: {"name": "行星", "tip": "【完美收尾】今天是驗收成果的日子。挑選做工最精緻的那件飾品，專注把手邊的事情做到完美，享受那種「搞定！」的成就感。"},
-    11: {"name": "光譜", "tip": "【斷捨離】心裡垃圾太多？還是家裡太亂？今天適合大掃除。戴上簡單、甚至不規則設計的飾品，釋放掉那些不再適合妳的人事物。"},
-    12: {"name": "水晶", "tip": "【團體合作】一個人走得快，一群人走得遠。今天適合開會或聚餐。戴上圓潤的珍珠或圓珠飾品，當那個凝聚大家的溫暖角色。"},
-    13: {"name": "宇宙", "tip": "【放空休息】辛苦了！今天適合慶祝和放鬆。戴上最簡約、甚至留白的飾品，告訴自己：我已經做得很好了，現在我要好好享受當下。"}
+    1:  {
+        "name": "磁性 (Magnetic)", 
+        "F": {"structure": "單鑽 / 單墜", "style": "【單戴聚焦】選一條最喜歡的項鍊「單獨佩戴」，讓它成為全身的亮點，幫妳把散亂的能量都集中起來，專注在目標上。"},
+        "M": {"structure": "印章戒指 (Signet Ring)", "style": "【單一權威】佩戴一只具備份量的印章戒指，象徵唯一的目標與不容動搖的意志。"}
+    },
+    2:  {
+        "name": "月亮 (Lunar)", 
+        "F": {"structure": "雙石 / 對稱", "style": "【成雙成對】戴上「一對」耳環，或者左右手各戴一個戒指。這能幫妳平衡內在的糾結，在做選擇時更果斷。"},
+        "M": {"structure": "異材質拼接", "style": "【二元平衡】選擇金銀拼接或亮霧面雙色設計的飾品，提醒自己在挑戰與穩定之間找到平衡點。"}
+    },
+    3:  {
+        "name": "電力 (Electric)", 
+        "F": {"structure": "三角形 / 垂墜", "style": "【動態連結】選會「晃動」的耳環或有垂墜感的手鍊。讓飾品隨著妳的動作擺動，能幫妳招來好人緣和活絡的能量。"},
+        "M": {"structure": "功能性飾品", "style": "【連結啟動】選擇具有獨特扣環設計的手環，或與科技配件結合，象徵隨時準備好啟動與連結。"}
+    },
+    4:  {
+        "name": "自我存在 (Self-Existing)", 
+        "F": {"structure": "方形 / 結構", "style": "【方正結構】適合「方形」或線條硬朗的設計。這能帶給妳安全感，幫妳在變動的環境中穩住陣腳，建立秩序。"},
+        "M": {"structure": "方戒 / 幾何", "style": "【定義形式】佩戴線條剛硬的方形戒指或立方體墜飾，象徵你對生活的定義與建立的穩固形式。"}
+    },
+    5:  {
+        "name": "超頻 (Overtone)", 
+        "F": {"structure": "五角星 / 光圈", "style": "【核心自信】戴一個稍微「大一點、顯眼一點」的主戒指或項鍊。別低調，今天要展現妳的氣場，讓大家看見妳！"},
+        "M": {"structure": "霸氣主戒", "style": "【彰顯力量】選擇體積較大、存在感強烈的主戒指，展現你的領導力與核心影響力。"}
+    },
+    6:  {
+        "name": "韻律 (Rhythmic)", 
+        "F": {"structure": "六邊形 / 平衡", "style": "【舒適流動】選擇戴起來「最舒服、圓潤」的飾品。例如滾珠系列，讓妳在忙碌中也能保持優雅的節奏，不慌不忙。"},
+        "M": {"structure": "鍊條 / 節奏", "style": "【組織平衡】佩戴規律排列的古巴鍊或環環相扣的手鍊，象徵生活節奏的組織與流暢。"}
+    },
+    7:  {
+        "name": "共振 (Resonant)", 
+        "F": {"structure": "Y字鍊 / 中軸", "style": "【直覺感應】今天出門前，閉上眼摸摸飾品盒，**直覺**拿到哪一個就戴哪一個。那就是宇宙今天要給妳的訊息。"},
+        "M": {"structure": "簡約墜飾", "style": "【通道調頻】佩戴垂直線條的墜飾或長方牌，象徵你成為接收靈感與資訊的通道。"}
+    },
+    8:  {
+        "name": "銀河 (Galactic)", 
+        "F": {"structure": "無限符號 / 交織", "style": "【和諧呼應】試試看「成套搭配」，例如項鍊配耳環。這種整體感能幫妳整合信念，讓妳說出來的話更有份量。"},
+        "M": {"structure": "編織紋理", "style": "【信念整合】選擇金屬編織紋理的戒指或手環，象徵外在行動與內在信念的完美交織。"}
+    },
+    9:  {
+        "name": "太陽 (Solar)", 
+        "F": {"structure": "流蘇 / 動態", "style": "【意圖閃耀】選有鑲鑽或會「閃閃發光」的款式。讓那道光芒隨著妳的動作脈動，把妳的熱情傳遞出去。"},
+        "M": {"structure": "放射狀圖騰", "style": "【行動脈衝】刻有太陽放射線條的飾品，象徵你的意圖如太陽般向外擴展，化為具體行動。"}
+    },
+    10: {
+        "name": "行星 (Planetary)", 
+        "F": {"structure": "排鑽 / 實心", "style": "【完美顯化】選做工最精細、質感最好的那件飾品。它象徵著「完美」，能幫妳把腦中的計畫，漂亮地落實到生活中。"},
+        "M": {"structure": "實心寬版", "style": "【落實成果】佩戴實心且厚實的寬版戒指或手鐲，象徵你將計畫顯化為具體成果的扎實能力。"}
+    },
+    11: {
+        "name": "光譜 (Spectral)", 
+        "F": {"structure": "彩虹 / 漸層", "style": "【自由混搭】今天打破規則！金配銀、或者混搭不同系列都可以。這種自由感能幫妳釋放壓力，找回最真實的自己。"},
+        "M": {"structure": "不規則 / 破壞", "style": "【釋放解構】選擇帶有不規則切面或做舊處理的設計，象徵打破框架、釋放舊有模式的自由。"}
+    },
+    12: {
+        "name": "水晶 (Crystal)", 
+        "F": {"structure": "圓形 / 串珠", "style": "【分享與愛】這是一件適合跟好朋友或另一半戴「對鍊/對戒」的日子。透過飾品連結彼此的心，能量會加倍喔！"},
+        "M": {"structure": "圓弧 / 連結", "style": "【團體合作】選擇圓弧線條的戒指，或象徵連結的繩結金工設計，提醒自己融入團隊，貢獻己力。"}
+    },
+    13: {
+        "name": "宇宙 (Cosmic)", 
+        "F": {"structure": "螺旋 / 全知", "style": "【極簡留白】選設計最簡單、甚至有點「留白」的款式。讓心靈放個假，享受當下，包容生命發生的一切。"},
+        "M": {"structure": "留白 / 素面", "style": "【超越存在】佩戴極簡的素面寬戒，無多餘雕飾，象徵超越世俗紛擾，安住在當下的存在。"}
+    }
 }
 
 # ────────────── Page Config & CSS ──────────────
-st.set_page_config(page_title="Tru-Mi 能量選物", layout="wide", page_icon="💎")
+st.set_page_config(page_title="Tru-Mi × Maya 能量選品", layout="wide", page_icon="💍")
 st.markdown(
     """<style>
-    .hero {padding:3rem 2rem; text-align:center; background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%); border-radius: 15px; margin-bottom: 2rem;}
-    .hero h1 {font-size:2.5rem; font-weight:700; color: #333; margin-bottom:0.5rem; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;}
-    .hero p  {font-size:1.1rem; color: #666;}
+    .hero {padding:3rem 2rem; text-align:center; background: linear-gradient(135deg, #FFF5F7 0%, #E6EEF5 100%); border-radius: 15px; margin-bottom: 2rem;}
+    .hero h1 {font-size:2.5rem; font-weight:700; color: #555; margin-bottom:0.5rem; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;}
+    .hero p  {font-size:1.1rem; color: #777;}
     
     .footer {position:fixed; bottom:0; width:100%; background:#333; color:white; text-align:center; padding:1rem; z-index:999;}
     .footer a {color:#F8BBD0; text-decoration:none; margin:0 0.5rem;}
@@ -216,39 +357,41 @@ st.markdown(
         border: 1px solid #f5f5f5;
     }
     
-    /* 標籤樣式 */
-    .aspect-tag {
-        display: inline-block;
-        padding: 5px 15px;
-        border-radius: 20px;
-        font-weight: bold;
-        color: white;
-        margin-bottom: 10px;
-        font-size: 0.9rem;
-    }
-    .tag-career { background-color: #4A90E2; } /* 藍色-事業 */
-    .tag-wealth { background-color: #F5A623; } /* 金色-財富 */
-    .tag-love { background-color: #E06C75; }   /* 粉色-感情 */
-    .tag-family { background-color: #50E3C2; color: #333; } /* 綠色-家庭 */
-    .tag-health { background-color: #BD10E0; } /* 紫色-健康 */
-    
     .btn-trumi {
         display: inline-block;
-        padding: 12px 24px;
+        padding: 10px 20px;
         background-color: #D4AF37;
         color: white !important;
         text-decoration: none;
-        border-radius: 30px;
+        border-radius: 5px;
         font-weight: bold;
-        margin-top: 15px;
+        margin-top: 10px;
         text-align: center;
         width: 100%;
         transition: all 0.3s ease;
-        box-shadow: 0 4px 6px rgba(212, 175, 55, 0.3);
     }
     .btn-trumi:hover {
         background-color: #B59025;
         transform: translateY(-2px);
+    }
+    
+    .ritual-box {
+        background-color: #fafafa;
+        padding: 20px;
+        border-left: 5px solid #D4AF37;
+        margin-top: 20px;
+        font-size: 0.95rem;
+    }
+    
+    .tag-box {
+        display: inline-block;
+        padding: 5px 10px;
+        background-color: #fff3e0;
+        color: #e65100;
+        border-radius: 15px;
+        font-size: 0.9rem;
+        font-weight: bold;
+        margin-bottom: 10px;
     }
     </style>""",
     unsafe_allow_html=True,
@@ -258,8 +401,8 @@ st.markdown(
 st.markdown(
     """
     <section class="hero">
-      <h1>💎 Tru-Mi 能量選物陪伴室</h1>
-      <p>不只是飾品，更是妳當下最需要的能量補給。<br>輸入生日，看看宇宙想送給妳什麼禮物？</p>
+      <h1>Tru-Mi × Maya 能量選品</h1>
+      <p>探索妳/你的靈魂印記，遇見專屬於你的 Tru-Mi 故事珠寶</p>
     </section>
     """,
     unsafe_allow_html=True,
@@ -275,7 +418,11 @@ except Exception as e:
     st.stop()
 
 # ────────────── Sidebar Input ──────────────
-st.sidebar.header("📅 領取妳的專屬能量")
+st.sidebar.header("📅 輸入資訊，尋找命定飾品")
+# 性別選擇
+gender_input = st.sidebar.radio("心理性別 (Psychological Gender)", ["女性 (Female)", "男性 (Male)"])
+gender_key = "M" if "男" in gender_input else "F"
+
 year = st.sidebar.selectbox("出生年份 (西元)", sorted(kin_start.keys()), index=sorted(kin_start.keys()).index(1990))
 month = st.sidebar.selectbox("出生月份", list(range(1,13)), index=0)
 max_day = calendar.monthrange(year, month)[1]
@@ -303,18 +450,16 @@ if subset.empty:
 info = subset.iloc[0]
 totem = info["圖騰"]
 
-# Get Data
-rec = totem_trumi.get(totem, {})
-tone_rec = tone_advice.get(tone_number, {})
+# Get Mapped Data
+general_rec  = totem_general.get(totem, {})
+trumi_data   = totem_trumi.get(totem, {})
+trumi_rec    = trumi_data.get(gender_key, {})   # Get F or M based on selection
 
-# Determine Tag Class based on Aspect
-aspect_class = "tag-career"
-if "財富" in rec.get('aspect', ''): aspect_class = "tag-wealth"
-elif "感情" in rec.get('aspect', ''): aspect_class = "tag-love"
-elif "家庭" in rec.get('aspect', ''): aspect_class = "tag-family"
-elif "健康" in rec.get('aspect', ''): aspect_class = "tag-health"
+tone_data    = tone_advice.get(tone_number, {})
+tone_rec     = tone_data.get(gender_key, {})    # Get F or M
+tone_name    = tone_data.get("name", str(tone_number))
 
-st.markdown(f"### 🔮 妳的靈魂印記：{kin} {totem} (調性 {tone_number})")
+st.markdown(f"### 🔮 你的靈魂印記：{kin} {totem} (調性 {tone_number})")
 
 col_img, col_info = st.columns([1, 4])
 with col_img:
@@ -323,80 +468,23 @@ with col_img:
         st.image(Image.open(img_file), use_container_width=True)
 
 with col_info:
-    if rec:
-        # 顯示面向標籤
-        st.markdown(f'<span class="aspect-tag {aspect_class}">{rec["aspect"]}</span>', unsafe_allow_html=True)
-        
-        # 顯示 Slogan
-        st.markdown(f"### {rec['tagline']}")
-        
-        # 顯示口語化描述
-        st.write(rec['desc'])
+    if general_rec:
+        # 顯示人生面向 Tag
+        st.markdown(f'<div class="tag-box">{general_rec.get("focus", "全方位")}</div>', unsafe_allow_html=True)
+        st.success(f"**核心能量：{general_rec['vibe']}**")
+        st.write(f"推薦金屬：**{general_rec['metal']}**")
     else:
         st.warning("目前尚無此圖騰對應資料")
 
-# ────────────── 選品顧問主區塊 ──────────────
+# ────────────── 選品顧問主區塊 (整合版) ──────────────
 st.divider()
 
 col1, col2 = st.columns(2)
 
-# 左欄：Tru-Mi 命定單品
+# 左欄：靈魂材質建議 (通用建議 - Why you need it)
 with col1:
-    st.markdown("#### 💍 妳的命定飾品 (Destiny Item)")
-    st.caption("這款飾品，能放大妳的天賦能量")
+    st.markdown("#### 💎 靈魂材質建議 (Soul Material)")
+    st.caption("由你的太陽圖騰決定")
     
-    if rec:
-        with st.container(border=True):
-            st.markdown(f"**✨ 推薦系列：{rec['series']}**")
-            st.markdown(f"**💎 必收單品：{rec['item']}**")
-            
-            st.info("💡 **為什麼適合妳？**\n因為妳值得擁有一個「懂妳」的飾品，時刻陪伴妳、支持妳。")
-            
-            # 導購按鈕
-            btn_text = "前往官網，把它帶回家 👉"
-            if "訂製" in rec['series']:
-                btn_text = "預約專屬訂製體驗 👉"
-            st.markdown(f'<a href="{rec["url"]}" target="_blank" class="btn-trumi">{btn_text}</a>', unsafe_allow_html=True)
-
-# 右欄：能量使用說明書 (調性)
-with col2:
-    st.markdown("#### 🎵 能量使用小撇步 (Energy Tips)")
-    st.caption("有了飾品，該怎麼用最有效？")
-    
-    if tone_rec:
-        with st.container(border=True):
-            st.markdown(f"**✨ 妳的調性：{tone_rec['name']}**")
-            st.write(tone_rec['tip'])
-            
-            st.success("🌟 **試試看**：下次戴上飾品時，在心裡默唸這個小撇步，感覺一下有沒有什麼不同？")
-
-# ────────────── 能量啟動儀式 ──────────────
-with st.expander("🕯️ 收到飾品後該做什麼？(3分鐘開光儀式)"):
-    st.markdown(
-        """
-        <div style="background-color: #fafafa; padding: 20px; border-left: 5px solid #D4AF37; border-radius: 5px;">
-        <p>親愛的，當快遞把 Tru-Mi 的盒子送到妳手上時，請給自己 3 分鐘的獨處時間：</p>
-        
-        <ol style="line-height: 1.8;">
-            <li><strong>歸零：</strong>把飾品握在手心，深呼吸，想像白光把運送過程的雜氣都洗掉。</li>
-            <li><strong>連結：</strong>把飾品貼在胸口，感受它的溫度，在心裡對它說：「嗨，以後請多指教。」</li>
-            <li><strong>許願：</strong>對著飾品說出妳現在最需要的力量（例如：<strong>請給我勇氣/請讓我賺大錢</strong>）。</li>
-            <li><strong>封存：</strong>最後，對它輕輕吹一口氣。好了！現在它是妳專屬的護身符了。</li>
-        </ol>
-        </div>
-        """, 
-        unsafe_allow_html=True
-    )
-
-# ────────────── 固定 Footer ──────────────
-st.markdown(
-    """
-    <div style="margin-bottom: 80px;"></div>
-    <footer class="footer">
-      <p>Designed for Tru-Mi Jewelry | 妳的能量，我們在乎</p>
-      <a href="https://www.tru-mi.com/" target="_blank">👉 Tru-Mi 官網</a> 
-      <a href="https://www.facebook.com/trumi.jewelry/" target="_blank">👉 FB 粉絲頁</a>
-    </footer>
-    """,
-    unsafe_allow_html=True
-)
+    if general_rec:
+        wit
