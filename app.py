@@ -1,4 +1,3 @@
-```python
 import os
 import calendar
 from PIL import Image
